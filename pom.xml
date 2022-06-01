@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>hibernate-second-level-cache</artifactId>
+    <artifactId>dummy-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>dummy project</name>
     <description>implement lots of things</description>
