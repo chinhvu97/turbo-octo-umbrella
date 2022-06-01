@@ -1,4 +1,4 @@
-package com.example.hibernatesecondlevelcache;
+package com.example.dummy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

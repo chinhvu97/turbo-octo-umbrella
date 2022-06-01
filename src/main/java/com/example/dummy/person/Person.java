@@ -1,4 +1,4 @@
-package com.example.hibernatesecondlevelcache;
+package com.example.dummy.person;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Getter
@@ -19,6 +18,12 @@ public class Person {
     @Id
     @GeneratedValue
     private Long id;
-    private String name;
+
+    @Column(name = "full_name")
+    private String fullName;
+
     private String email;
+
+    @Column(name = "phone_number")
+    private String phoneNumber;
 }

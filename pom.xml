@@ -11,8 +11,8 @@
     <groupId>com.example</groupId>
     <artifactId>hibernate-second-level-cache</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>hibernate-second-level-cache</name>
-    <description>hibernate-second-level-cache</description>
+    <name>dummy project</name>
+    <description>implement lots of things</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -26,18 +26,14 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.session</groupId>
-            <artifactId>spring-session-data-redis</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -64,6 +60,18 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>8.5.12</version>
+                <configuration>
+                    <user>postgres</user>
+                    <password>postgres</password>
+                    <schemas>
+                        <schema>public</schema>
+                    </schemas>
                 </configuration>
             </plugin>
         </plugins>
