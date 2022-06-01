@@ -1,4 +1,4 @@
-package com.example.hibernatesecondlevelcache;
+package com.example.dummy.person;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

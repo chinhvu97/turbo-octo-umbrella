@@ -1,4 +1,4 @@
-package com.example.hibernatesecondlevelcache;
+package com.example.dummy.person;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
