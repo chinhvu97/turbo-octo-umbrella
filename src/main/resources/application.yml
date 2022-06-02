@@ -8,8 +8,6 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         default_schema: app_db
-    hibernate:
-      ddl-auto: update
   sql:
     init:
       mode: always
