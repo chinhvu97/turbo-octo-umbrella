@@ -1,21 +1,35 @@
 package com.example.dummy.person;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class PersonService {
     private final PersonRepository personRepository;
 
-    public Person findById(Long id) {
+    public final PersonMapper personMapper;
+
+    public PersonDto findById(Long id) {
         Optional<Person> oPerson = personRepository.findById(id);
-        if (oPerson.isPresent()) {
-            return oPerson.get();
+        if (oPerson.isEmpty()) {
+            log.info("Can not find person by id :{}", id);
+            return null;
         } else {
-            throw new RuntimeException("user not found");
+            log.info("Found person by id:{}", id);
+            return personMapper.toDto(oPerson.get());
         }
+    }
+
+    public PersonDto create(PersonDto personDto) {
+        Person toCreate = personMapper.toEntity(personDto);
+        return personMapper.toDto(
+                personRepository.save(toCreate)
+        );
     }
 }

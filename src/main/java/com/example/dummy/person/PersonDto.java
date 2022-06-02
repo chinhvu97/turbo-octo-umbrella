@@ -1,27 +1,21 @@
 package com.example.dummy.person;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
-
-@Entity
 @Getter @Setter
-@Table(name = "person", schema = "app_db")
 @AllArgsConstructor @NoArgsConstructor
-public class Person {
-    // id, name, email
-    @Id
-    @GeneratedValue
+public class PersonDto {
     private Long id;
 
-    @Column(name = "full_name")
+    @JsonProperty("full_name")
     private String fullName;
 
     private String email;
 
-    @Column(name = "phone_number")
+    @JsonProperty("phone_number")
     private String phoneNumber;
 }

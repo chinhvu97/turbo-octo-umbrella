@@ -1,9 +1,9 @@
 package com.example.dummy.person;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/person")
@@ -13,8 +13,13 @@ public class PersonController {
 
     // Get method user by id
     @RequestMapping("/{id}")
-    public Person getOne(@PathVariable Long id) {
-        return personService.findById(id);
+    public ResponseEntity<PersonDto> getOne(@PathVariable Long id) {
+        return new ResponseEntity<>(personService.findById(id), HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<PersonDto> create(@RequestBody PersonDto personDto) {
+        return new ResponseEntity<>(personService.create(personDto), HttpStatus.CREATED);
     }
 
 }
