@@ -1,0 +1,10 @@
+insert into app_db.department (id, department_name, location) values (1, 'Accounting', 'Shipaidong');
+insert into app_db.department (id, department_name, location) values (2, 'Engineering', 'Guijalo');
+insert into app_db.department (id, department_name, location) values (3, 'Marketing', 'Xinji');
+insert into app_db.department (id, department_name, location) values (4, 'Services', 'Houxi');
+insert into app_db.department (id, department_name, location) values (5, 'Legal', 'Gniechowice');
+insert into app_db.department (id, department_name, location) values (6, 'Accounting', 'Jenang Selatan');
+insert into app_db.department (id, department_name, location) values (7, 'Product Management', 'Gaotaizi');
+insert into app_db.department (id, department_name, location) values (8, 'Sales', 'Wadung');
+insert into app_db.department (id, department_name, location) values (9, 'Accounting', 'Yushanpu');
+insert into app_db.department (id, department_name, location) values (10, 'Human Resources', 'La Hacienda');
